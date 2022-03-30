@@ -56,7 +56,7 @@ public class ExchangeRates {
                         FROM Exchange_Rate__c 
                         WHERE Base_Currency__c =:RateLib.baseCurrencies 
                               AND forList__c = true
-                              AND CreatedDate = TODAY];
+                              AND CreatedDate = TODAY WITH SECURITY_ENFORCED];
             // Reload the cache
             Cache.Org.put(RateLib.cacheName+'Rates', rates);
         }
